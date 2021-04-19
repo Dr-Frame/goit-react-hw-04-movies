@@ -1,0 +1,17 @@
+.Reviews {
+  &__item {
+    border-top: 1px solid grey;
+    margin-bottom: 10px;
+  }
+
+  &__author {
+    margin-top: 5px;
+  }
+
+  &__author span {
+    margin-top: 5px;
+    padding: 3px 10px;
+    background-color: orange;
+    border-radius: 3px;
+  }
+}

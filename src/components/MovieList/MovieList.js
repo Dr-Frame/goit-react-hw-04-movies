@@ -1,12 +1,21 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import './MovieList.scss';
 
-const MovieList = ({ movieList }) => (
+const MovieList = ({ movieList, location, searchQuerry }) => (
   <>
-    <ul>
+    <ul className="MovieList">
       {movieList.map(({ id, title }) => (
         <li key={id}>
-          <Link to={`/movies/${id}`} id={id}>
+          <Link
+            className="MovieList__link"
+            to={{
+              pathname: `/movies/${id}`,
+              state: {
+                from: location,
+              },
+            }}
+          >
             {title}
           </Link>
         </li>
@@ -15,38 +24,4 @@ const MovieList = ({ movieList }) => (
   </>
 );
 
-export default MovieList;
-
-/* class MovieList extends Component {
-  state = {
-    movieList: [],
-  };
-
-  componentDidMount() {
-    this.setState({
-      movieList: this.props,
-    });
-    console.log(this.props);
-  }
-
-  render() {
-    console.log(this.state);
-    const { movieList } = this.state;
-
-    return (
-      <>
-        <ul>
-          {movieList.map(({ id, title }) => (
-            <li key={id}>
-              <Link to={`/movies/${id}`} id={id}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </>
-    );
-  }
-}
-
-export default MovieList;  */
+export default withRouter(MovieList);

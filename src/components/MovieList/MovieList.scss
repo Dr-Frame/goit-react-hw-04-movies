@@ -1,0 +1,16 @@
+.MovieList {
+  margin-top: 10px;
+}
+
+.MovieList__link {
+  display: inline-block;
+  padding: 3px 0;
+  text-transform: uppercase;
+  color: black;
+  transition: 300ms;
+
+  &:hover {
+    color: rgb(255, 119, 0);
+    transform: scale(1.1);
+  }
+}

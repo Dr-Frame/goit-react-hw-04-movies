@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
 import './HomePage.scss';
 import axios from 'axios';
 import MovieList from '../MovieList';
+import './HomePage.scss';
 
 class HomePage extends Component {
   state = {
@@ -21,10 +21,10 @@ class HomePage extends Component {
 
   render() {
     const { trending } = this.state;
-    console.log(this.props);
+
     return (
       <div>
-        <h2>Trending today</h2>
+        <h2 className="HomePage__title">Trending today</h2>
         <MovieList movieList={trending} />
       </div>
     );

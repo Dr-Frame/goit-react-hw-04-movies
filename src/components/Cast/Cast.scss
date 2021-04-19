@@ -1,0 +1,31 @@
+.Cast {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: 200px;
+    padding: 3px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.105);
+
+    border-radius: 3px;
+    transition: 300ms;
+    cursor: pointer;
+    background-color: fff;
+    color: black;
+
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.27);
+      transform: scale(1.05);
+    }
+  }
+
+  &__char span {
+    color: orange;
+    font-weight: bold;
+  }
+}
