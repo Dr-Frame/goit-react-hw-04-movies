@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './MovieDetailsPage';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Cast from '../Cast/Cast';
 import Review from '../Reviews';
@@ -97,7 +97,12 @@ class MovieDetailsPage extends Component {
             <li>
               <NavLink
                 className="MovieDetailsPage__extra-link"
-                to={`${match.url}/cast`}
+                to={{
+                  pathname: `${match.url}/cast`,
+                  state: {
+                    from: this.props.location,
+                  },
+                }}
               >
                 Cast
               </NavLink>
@@ -105,7 +110,12 @@ class MovieDetailsPage extends Component {
             <li className="MovieDetailsPage">
               <NavLink
                 className="MovieDetailsPage__extra-link"
-                to={`${match.url}/reviews`}
+                to={{
+                  pathname: `${match.url}/reviews`,
+                  state: {
+                    from: this.props.location,
+                  },
+                }}
               >
                 Reviews
               </NavLink>
@@ -130,4 +140,4 @@ class MovieDetailsPage extends Component {
   }
 }
 
-export default MovieDetailsPage;
+export default withRouter(MovieDetailsPage);
