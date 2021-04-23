@@ -39,7 +39,7 @@ class MoviePage extends Component {
     const { searchQuerry } = this.state;
 
     e.preventDefault();
-    this.fetchSearchMovie(searchQuerry);
+    this.fetchSearchMovie(searchQuerry.trim());
 
     this.props.location.search = `?query=${this.state.searchQuerry}`;
   };

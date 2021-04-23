@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './MovieList.scss';
 
-const MovieList = ({ movieList, location, searchQuerry }) => (
+const MovieList = ({ movieList, location }) => (
   <>
     <ul className="MovieList">
       {movieList.map(({ id, title }) => (
